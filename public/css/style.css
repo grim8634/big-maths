@@ -5,3 +5,34 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+.questions ul {
+	padding: 0;
+}
+.questions ul li {
+	list-style: none;
+	float: left;
+	min-width: 320px;
+	padding: 0;
+}
+
+
+.questions .answer {
+	width: 80px;
+	text-align: center;
+	/* float: right; */
+	/* margin-right: 100px; */
+}
+
+.questions {
+	font-size: 3em;
+	text-align: center;
+}
+
+.result {
+	width: 48px;
+	height: 50px;
+	float: right;
+	background: no-repeat;
+	display: none;
+}

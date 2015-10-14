@@ -1,0 +1,10 @@
+<form class="questions" id="quiz1">
+  <ul>
+  [% FOREACH question IN questions %]
+    <li>[% question.x %] [% question.operator %] [% question.y %] = <input class="answer" type="number" pattern="[0-9]*" ><span id="answer_[% loop.count %]" answer="[% question.a %]" class="result" /><li>
+  [% END %]
+  </ul>
+  <br style="clear:both" />
+  <input type="submit" id="submit_questions">
+  <input type="button" id="new_questions" value="New questions">
+</form>
