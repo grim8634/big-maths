@@ -1,20 +1,28 @@
-$(document).ready(function(){
-	$( "#quiz1" ).submit(function( event ) {
+$(function() {
+	$( "#quiz1" ).on('submit', function(e) { 
+		e.preventDefault();
+		var correct = 0;
+		var total = 0;
 		$( ".questions li" ).each(function( index ) {
 		 	var answer =  $( this ).find('.result').attr('answer');
 		 	var submitted = $( this ).find('input').val();
 		 	
 		 	var res = $( this ).find('.result');
-		 	if(answer == submitted) {
-		 		res.css('background-image', 'url(/images/tick.png)');
-		 	} else {
-		 		res.css('background-image', 'url(/images/cross.png)');
-		 	}
-
-		 	$( this ).find('.result').show();
-
+		 	if(answer) {
+			 	if(answer == submitted) {
+			 		res.css('background-image', 'url(/images/tick.png)');
+			 		correct++;
+			 	} else {
+			 		res.css('background-image', 'url(/images/cross.png)');
+			 	}
+			 	total++;
+			 	$( this ).find('.result').show();
+			 }
 		});
-	  event.preventDefault();
+
+		console.log("You scored " + correct + "/" + total);
+		alert("You scored " + correct + "/" + total);
+	    
 	});
 
 	$( "#new_questions" ).click( function( event ) {
